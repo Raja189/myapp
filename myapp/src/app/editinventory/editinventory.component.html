@@ -1,0 +1,29 @@
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="col-md-6">
+    <h2 class="text-center">Edit Inventory</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input formControlName="name" placeholder="Name" name="name" class="form-control" id="name">
+      </div>
+  
+      <div class="form-group">
+        <label for="price">Price:</label>
+        <input formControlName="price" placeholder="Price" name="price" class="form-control" id="price">
+      </div>
+
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input formControlName="quantity" placeholder="Quantity" name="quantity" class="form-control" id="quantity">
+      </div>
+      
+  
+      <button class="btn btn-success">Update</button>
+    </form>
+  </div>
+  
