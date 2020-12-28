@@ -15,6 +15,8 @@ export class EditinventoryComponent implements OnInit {
 
   inventory: Inventory;
   editForm: FormGroup;
+  submitted: boolean = false;
+
   constructor(private formBuilder: FormBuilder,private router: Router, private inventoryService: InventoryService,private datepipe: DatePipe) { }
 
   ngOnInit() {
@@ -40,6 +42,13 @@ export class EditinventoryComponent implements OnInit {
   }
 
   onSubmit() {
+
+    this.submitted = true;
+    if(this.editForm.invalid)
+    {
+    return;
+    }
+
     this.inventoryService.updateInventory(this.editForm.value)
       .pipe(first())
       .subscribe(

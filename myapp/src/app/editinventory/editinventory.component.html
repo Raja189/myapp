@@ -10,16 +10,25 @@
       <div class="form-group">
         <label for="name">Name:</label>
         <input formControlName="name" placeholder="Name" name="name" class="form-control" id="name">
+        <div *ngIf="submitted && editForm.controls.name.errors" class="error">
+          <div *ngIf="editForm.controls.name.errors.required">Name is required</div>
+        </div>
       </div>
   
       <div class="form-group">
         <label for="price">Price:</label>
         <input formControlName="price" placeholder="Price" name="price" class="form-control" id="price">
+        <div *ngIf="submitted && editForm.controls.price.errors" class="error">
+          <div *ngIf="editForm.controls.price.errors.required">Price is required</div>
+        </div>
       </div>
 
       <div class="form-group">
         <label for="quantity">Quantity</label>
         <input formControlName="quantity" placeholder="Quantity" name="quantity" class="form-control" id="quantity">
+        <div *ngIf="submitted && editForm.controls.quantity.errors" class="error">
+          <div *ngIf="editForm.controls.quantity.errors.required">Quantity is required</div>
+        </div>
       </div>
       
   

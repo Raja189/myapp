@@ -13,7 +13,7 @@ import {DatePipe} from '@angular/common'
 })
 export class AddinventoryComponent implements OnInit {
 
- 
+  submitted: boolean = false;
   constructor(private formBuilder: FormBuilder,private router: Router, private inventoryService: InventoryService ,private datepipe: DatePipe) 
   {
    
@@ -33,10 +33,19 @@ export class AddinventoryComponent implements OnInit {
   }
 
   onSubmit() {
+
+    this.submitted = true;
+    if (this.addForm.invalid) {
+      return;
+    }
+    else
+    {
+    
     this.inventoryService.createInventory(this.addForm.value)
       .subscribe( data => {
         this.router.navigate(['inventorylist']);
       }  );
   }
+}
 
 }
