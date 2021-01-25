@@ -13,6 +13,10 @@ import { EditinventoryComponent } from './editinventory/editinventory.component'
 import { InventoryService } from './service/inventory.service';
 import {DatePipe} from '@angular/common';
 
+import { FormsModule } from '@angular/forms';
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,10 +30,12 @@ import {DatePipe} from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2SearchPipeModule,
+    FormsModule
     
   ],
-  providers: [AuthenticationService,InventoryService,DatePipe],
+  providers: [AuthenticationService,InventoryService,DatePipe,Ng2SearchPipeModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

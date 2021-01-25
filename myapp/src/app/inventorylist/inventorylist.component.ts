@@ -10,7 +10,7 @@ import {DatePipe} from '@angular/common';
   styleUrls: ['./inventorylist.component.css']
 })
 export class InventorylistComponent implements OnInit {
-
+  searchText;
   inventorys: Inventory[];
 
   constructor(private router: Router, private inventoryService: InventoryService,private datepipe: DatePipe) { }
